@@ -7,7 +7,13 @@ let data=require('./data/weather.json');
 const app=express();
 const PORT=process.env.PORT||3002;
 
-app.get('/',(request,response)=>{
+app.get('/weather',(request,response)=>{
+  let cityName=request.query.city;
+  // let lat=request.query.lat;
+  // let lon=request.query.lon;
+  // let city=data.find(obj=>obj.lat===lat&&obj.lon===lon);
+  let city=data.find(obj=>obj.city_name===cityName);
+  response.send(`${city}`);
 });
 
 app.get('*',(request,response)=>{
