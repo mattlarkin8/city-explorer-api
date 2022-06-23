@@ -12,18 +12,26 @@ const PORT=process.env.PORT||3002;
 
 app.get('/weather',async(request,response)=>{
   try {
-    // let searchQuery = request.query.searchQuery;
     let lat=request.query.lat;
     let lon=request.query.lon;
-    // let searchResult=data.find(obj=>obj.lat===lat&&obj.lon===lon);
     let url=`http://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHERBIT_API_KEY}&units=I&days=3&lat=${lat}&lon=${lon}`;
-    // let searchResult = data.find(obj => obj.city_name.toLowerCase() === searchQuery.toLowerCase());
-    // let result = searchResult.data.map(dayObj => new Forecast(dayObj));
     let result=await axios.get(url);
-    response.status(200).send(result.data);
+    let groomedData=result.data.data.map(dayObj=>new Forecast(dayObj));
+    response.status(200).send(groomedData);
   }
   catch (error) {
     response.status(500).send(`Encountered an error: ${error.status}. ${error.message}`);
+  }
+});
+
+app.get('/movies',async(req,res)=>{
+  try{
+    let url=`https://api.themoviedb.org/3/movie/550?api_key=${process.env.MOVIE_API_KEY}`;
+    let result=await axios.get(url);
+    res.status(200).send(result.data);
+  }
+  catch(error){
+    res.status(500).send(`Encountered an error: ${error.status}. ${error.message}`);
   }
 });
 
