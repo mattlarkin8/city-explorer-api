@@ -9,7 +9,7 @@
 
 ## **Architecture**
 
-<img src="img/Lab06%20WRRC.jpg" width="600" height="300"/>
+<img src="img/Lab06%20WRRC.jpg" width="800" height="300"/>
 
 ## **Change Log**
 
