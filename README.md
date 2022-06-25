@@ -13,7 +13,7 @@
 <img src="img/Lab07%20WRRC.jpg" width="800" height="300"/>
 <img src="img/Lab08%20WRRC.jpg" width="800" height="300"/>
 <img src="img/Lab09%20WRRC.jpg" width="800" height="300"/>
-
+<img src="img/Lab10%20WRRC.jpg" width="800" height="300"/>
 
 ## **Change Log**
 
@@ -86,3 +86,15 @@ Start Time: 6:30
 Finish Time: 8:30
 
 Actual Time Needed: 2 hours
+
+### Lab10
+
+Feature 1: Performance
+
+Estimated Time Needed: 2 hours
+
+Start Time: 6:30
+
+Finish Time: 11:00
+
+Actual Time Needed: 3.5 hours
