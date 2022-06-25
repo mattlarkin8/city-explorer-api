@@ -16,6 +16,10 @@ app.get('/weather', weatherHandler);
 
 app.get('/movies',movieHandler);
 
+app.get('*',(request,response)=>{
+  response.status(404).send('The route you entered does not exist.');
+});
+
 function weatherHandler(request, response) {
   const { lat, lon } = request.query;
   weather(lat, lon)
